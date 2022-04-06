@@ -1,0 +1,9 @@
+/
+/profile
+/wallet
+/my_tickets_history
+/draws
+    /6x45
+    ...
+        /buy_a_ticket
+        /history

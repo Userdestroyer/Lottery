@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Draw extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'draw_type',
+        'draw_number',
+        'draw_values',
+        'draw_pot',
+    ];
+}
