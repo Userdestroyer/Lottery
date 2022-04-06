@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f
+class ComposerStaticInitd571be57f0adea07af0f4aaa5fff57dd
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -178,8 +178,8 @@ class ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -335,8 +335,8 @@ class ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -517,8 +517,6 @@ class ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\Draw' => __DIR__ . '/../..' . '/app/Models/Draw.php',
-        'App\\Models\\Ticket' => __DIR__ . '/../..' . '/app/Models/Ticket.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -632,7 +630,6 @@ class ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
-        'Database\\Seeders\\UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersTableSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -5610,10 +5607,10 @@ class ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita7dda0366efd0555fe6478f5a4e7378f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd571be57f0adea07af0f4aaa5fff57dd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd571be57f0adea07af0f4aaa5fff57dd::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd571be57f0adea07af0f4aaa5fff57dd::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd571be57f0adea07af0f4aaa5fff57dd::$classMap;
 
         }, null, ClassLoader::class);
     }
