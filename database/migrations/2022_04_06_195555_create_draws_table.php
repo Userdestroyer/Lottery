@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('draw_type_id')->unsigned();
             $table->foreign('draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
             $table->json('draw_values');
-            $table->decimal('draw_pot',14,2);
+            $table->integer('draw_pot');
             $table->timestamps();
         });
     }

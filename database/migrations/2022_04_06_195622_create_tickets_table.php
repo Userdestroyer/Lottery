@@ -19,9 +19,9 @@ return new class extends Migration
             $table->foreign('ticket_draw_id')->references('draw_id')->on('draws')->onDelete('cascade');
             $table->integer('ticket_number');
             $table->json('ticket_values');
-            $table->decimal('ticket_price');
+            $table->integer('ticket_price');
             $table->boolean('ticket_is_winner');
-            $table->decimal('ticket_winning_sum');
+            $table->integer('ticket_winning_sum');
             $table->foreignId('ticket_user_id')->unsigned();
             $table->foreign('ticket_user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->timestamps();

@@ -22,6 +22,7 @@ class UserFactory extends Factory
             'user_login' => $this->faker->UserName(),
             'user_email' => $this->faker->unique()->safeEmail(),
             'user_phone_number' => $this->faker->phoneNumber(),
+            'user_role' => $this->faker->randomElement($array = array ('user','admin')),
             'user_balance' => $this->faker->NumberBetween(0,19000),
             //'email_verified_at' => now(),
             'user_password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

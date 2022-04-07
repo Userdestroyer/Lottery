@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('user_password');
             $table->string('user_email')->unique();
             $table->string('user_phone_number');
-            $table->decimal('user_balance');
+            $table->string('user_role');
+            $table->integer('user_balance');
             $table->rememberToken();
             $table->timestamps();
         });
