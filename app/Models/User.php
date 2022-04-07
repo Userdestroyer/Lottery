@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function tickets(){
+        return $this->hasMany('App\Ticket', 'ticket_user_id','user_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

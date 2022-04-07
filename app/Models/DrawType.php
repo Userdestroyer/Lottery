@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ticket extends Model
+class DrawType extends Model
 {
     use HasFactory;
 
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
-
-    public function draw() {
-        return $this->belongsTo(Draw::class);
+    public function draws(){
+        return $this->hasMany('App\Draw', 'draw_type_id','draw_type_id');
     }
 
     protected $fillable = [

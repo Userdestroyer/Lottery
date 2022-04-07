@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('draws', function (Blueprint $table) {
-            $table->bigIncrements('draw_id');
-            $table->foreignId('draw_type_id')->unsigned();
-            $table->foreign('draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
-            $table->json('draw_values');
-            $table->decimal('draw_pot',14,2);
+        Schema::create('draw_types', function (Blueprint $table) {
+            $table->bigIncrements('draw_type_id');
+            $table->string('draw_type_name');
+            $table->integer('draw_type_volume');
+            $table->integer('draw_type_min_of_values');
+            $table->integer('draw_type_max_of_values');
+            $table->text('draw_type_description');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('draws');
+        Schema::dropIfExists('draw_types');
     }
 };

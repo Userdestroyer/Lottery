@@ -24,9 +24,9 @@ class DrawFactory extends Factory
             );
         return [
             //'draw_values' => $this->faker->randomElements($array, $count = 1),
+            'draw_type_id' => $this->faker->numberBetween(1,3),
             'draw_values' => json_encode($this->faker->randomElement($array)),
-            'draw_pot' => $this->faker->numberBetween(1000,4800000),
-            'draw_datetime' => $this->faker->dateTimeInInterval($startDate = '+ 2 days', $interval = '+ 5 days', $timezone = null)
+            'draw_pot' => $this->faker->numberBetween(1000,4800000)
         ];
     }
 }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id('ticket_id');
-            $table->string('ticket_type');
-            $table->integer('ticket_draw_number');
+            $table->foreignId('ticket_draw_id')->unsigned();
+            $table->foreign('ticket_draw_id')->references('draw_id')->on('draws')->onDelete('cascade');
             $table->integer('ticket_number');
             $table->json('ticket_values');
             $table->decimal('ticket_price');
@@ -24,8 +24,7 @@ return new class extends Migration
             $table->decimal('ticket_winning_sum');
             $table->foreignId('ticket_user_id')->unsigned();
             $table->foreign('ticket_user_id')->references('user_id')->on('users')->onDelete('cascade');
-            $table->timestamp('ticket_purchase_date');
-            $table->datetime('ticket_play_datetime')->nullable();
+            $table->timestamps();
         });
     }
 
