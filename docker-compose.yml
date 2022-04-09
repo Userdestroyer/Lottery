@@ -2,6 +2,7 @@ version: '3'
 
 networks:
   laravel:
+      driver: bridge
 
 services:
   nginx:
@@ -15,6 +16,7 @@ services:
     depends_on:
       - php
       - mysql
+      - mysql_testing
     networks:
       - laravel
 
@@ -36,6 +38,25 @@ services:
       SERVICE_NAME: mysql
     networks:
       - laravel
+
+  mysql_testing:
+      image: mysql:5.7.22
+      container_name: mysql_testing
+      restart: unless-stopped
+      tty: true
+      ports:
+          - "4307:3306"
+      volumes:
+          - ./docker/mysql_testing:/var/lib/mysql_testing
+      environment:
+          MYSQL_DATABASE: lottery
+          MYSQL_USER: lottery
+          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: secret
+          SERVICE_TAGS: dev
+          SERVICE_NAME: mysql_testing
+      networks:
+          - laravel
 
   php:
     build:
@@ -63,6 +84,20 @@ services:
     networks:
       - laravel
 
+  phpmyadmin_testing:
+      image: phpmyadmin/phpmyadmin
+      restart: always
+      container_name: phpmyadmin_testing
+      depends_on:
+          - mysql_testing
+      ports:
+          - "8082:80"
+      environment:
+          PMA_HOST: mysql_testing
+          MYSQL_ROOT_PASSWORD: secret
+      networks:
+          - laravel
+
   composer:
     image: composer:latest
     container_name: composer
@@ -81,6 +116,7 @@ services:
       - ./:/var/www/html
     depends_on:
       - mysql
+      - mysql_testing
     working_dir: /var/www/html
     entrypoint: ['php', '/var/www/html/artisan']
     networks:
