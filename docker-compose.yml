@@ -87,7 +87,7 @@ services:
       - laravel
 
   npm:
-    image: node:13.7
+    image: node:16.14.2
     container_name: npm
     volumes:
         -   ./:/var/www/html

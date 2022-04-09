@@ -18,6 +18,7 @@ class Ticket extends Model
     }
 
     protected $fillable = [
+        'ticket_draw_type_id',
         'ticket_draw_id',
         'ticket_number',
         'ticket_values',

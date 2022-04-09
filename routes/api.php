@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\DrawTypeController;
+use App\Http\Controllers\Api\TicketController;
+use App\Http\Controllers\Api\DrawController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +17,8 @@ use App\Http\Controllers\Api\DrawTypeController;
 |
 */
 
-Route::get('/draw_type', [DrawTypeController::class, 'index']);
+Route::get('/draw_types', [DrawTypeController::class, 'listAll']);
 
+Route::prefix('/ticket')->group(function () {
+    Route::post('/create', [TicketController::class, 'createTicket']);
+});

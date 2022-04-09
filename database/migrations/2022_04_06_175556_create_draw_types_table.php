@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('draw_type_volume');
             $table->integer('draw_type_min_of_values');
             $table->integer('draw_type_max_of_values');
+            $table->string('draw_type_image')->nullable();
             $table->text('draw_type_description');
             $table->timestamps();
         });

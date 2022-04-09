@@ -14,10 +14,11 @@ class DrawType extends Model
     }
 
     protected $fillable = [
-        'ticket_type',
-        'ticket_draw_number',
-        'ticket_values',
-        'ticket_is_winner',
-        'ticket_winning_sum',
+        'draw_type_name',
+        'draw_type_volume',
+        'draw_type_min_of_values',
+        'draw_type_max_of_values',
+        'draw_type_image',
+        'draw_type_description',
     ];
 }

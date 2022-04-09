@@ -18,8 +18,9 @@ class Draw extends Model
     }
 
     protected $fillable = [
-        'draw_type',
+        'draw_type_id',
         'draw_values',
         'draw_pot',
+        'draw_played',
     ];
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
             $table->json('draw_values');
             $table->integer('draw_pot');
+            $table->boolean('draw_played');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id('ticket_id');
+            $table->foreignId('ticket_draw_type_id')->unsigned();
+            $table->foreign('ticket_draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
             $table->foreignId('ticket_draw_id')->unsigned();
             $table->foreign('ticket_draw_id')->references('draw_id')->on('draws')->onDelete('cascade');
             $table->integer('ticket_number');

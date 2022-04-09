@@ -23,7 +23,8 @@ class TicketFactory extends Factory
             $ar3 = array (4, 8, 7, 19, 20, 21, 27, 31)
         );
         return [
-            'ticket_draw_id' => 1,
+            'ticket_draw_type_id' => $this->faker->numberBetween(1,3),
+            'ticket_draw_id' => $this->faker->numberBetween(1,3),
             'ticket_number' => $this->faker->numberBetween(1,100),
             'ticket_values' => json_encode($this->faker->randomElement($array)),
             'ticket_price' => $this->faker->numberBetween(100,5000),
