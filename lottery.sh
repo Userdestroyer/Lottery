@@ -9,8 +9,10 @@ else
         sudo docker-compose down
     elif [ $1 = "status" ]; then
         sudo docker container ls
+    elif [ $1 = "test" ]; then
+        sudo docker exec php vendor/bin/phpunit $2 $3 $4
     else
         sudo docker-compose run --rm $1 $2 $3 $4
     fi
 fi
-sudo chmod -R 777 ./
+sudo chmod 777 -R ./
