@@ -12,7 +12,7 @@ use App\Models\DrawType;
 class NumberGeneratorTest extends TestCase
 {
 
-    //use RefreshDatabase;
+    use RefreshDatabase;
     /**
      * @test
      */
