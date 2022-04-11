@@ -21,6 +21,8 @@ class Draw extends Model
         'draw_type_id',
         'draw_values',
         'draw_pot',
+        'draw_received',
+        'draw_paid',
         'draw_played',
     ];
 }

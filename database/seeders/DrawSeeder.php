@@ -29,6 +29,8 @@ class DrawSeeder extends Seeder
                 'draw_type_id' => $i,
                 'draw_values' => json_encode(array (7, 9, 12, 22, 27, 34)),
                 'draw_pot' => mt_rand(1000,4800000),
+                'draw_received' => 0,
+                'draw_paid' => 0,
                 'draw_played' => false,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")

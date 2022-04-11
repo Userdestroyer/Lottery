@@ -14,6 +14,7 @@ class DrawType extends Model
     }
 
     protected $fillable = [
+        'draw_type',
         'draw_type_name',
         'draw_type_volume',
         'draw_type_min_of_values',

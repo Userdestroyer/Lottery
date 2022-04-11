@@ -2,18 +2,100 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d50cb571-6482-4d98-b080-ba3a814ce5c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.testing" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/storage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/CompareValues.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/DrawPlay.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/ConfirmsPasswords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RedirectsUsers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/RegistersUsers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/ResetsPasswords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/SendsPasswordResetEmails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/ThrottlesLogins.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/VerifiesEmails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/auth/login.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/auth/passwords/confirm.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/auth/passwords/email.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/auth/passwords/reset.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/auth/register.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/auth/verify.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/home.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/bootstrap-stubs/layouts/app.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/stubs/controllers/HomeController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Auth/stubs/routes.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/AuthCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/AuthRouteMethods.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/ControllersCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/Bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/Preset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/React.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/Vue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/bootstrap-stubs/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/bootstrap-stubs/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/bootstrap-stubs/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/bootstrap-stubs/webpack.mix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/react-stubs/Example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/react-stubs/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/react-stubs/webpack.mix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/vue-stubs/ExampleComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/vue-stubs/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/Presets/vue-stubs/webpack.mix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/UiCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/src/UiServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/Auth/ConfirmPasswordController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/Auth/ForgotPasswordController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/Auth/LoginController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/Auth/RegisterController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/Auth/ResetPasswordController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/Auth/VerificationController.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/stubs/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/tests/AuthBackend/AuthenticatesUsersTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/tests/AuthBackend/RegistersUsersTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravel/ui/tests/AuthBackend/ThrottleLoginsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lottery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lottery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/NumberGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/NumberGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery.sh" beforeDir="false" afterPath="$PROJECT_DIR$/lottery.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d21bc1965d8c501e5e18921c4eb8ea6ec1e5686e.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/NumberGeneratorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/NumberGeneratorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Draw.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Draw.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DrawType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DrawType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ticket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DrawFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DrawFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +117,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app/Rules/ActiveDraw.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/config/database.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Actions/NumberGenerator.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Resources/DrawTypeResource.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tests/Unit/NumberGeneratorTest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/phpunit.xml" root0="FORCE_HIGHLIGHTING" />
@@ -44,7 +128,9 @@
     <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.env.testing" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/routes/api.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Actions/DrawPlay.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/routes/web.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tests/CreatesApplication.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -171,6 +257,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="27W3D2Qtyz02LoefGWnSOPcEROo" />
@@ -216,6 +303,8 @@
       <workItem from="1649587487425" duration="772000" />
       <workItem from="1649592334556" duration="1023000" />
       <workItem from="1649609185173" duration="8374000" />
+      <workItem from="1649667763311" duration="5161000" />
+      <workItem from="1649697702285" duration="10537000" />
     </task>
     <servers />
   </component>

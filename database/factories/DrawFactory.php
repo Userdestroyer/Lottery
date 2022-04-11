@@ -32,6 +32,8 @@ class DrawFactory extends Factory
             'draw_type_id' => $this->faker->numberBetween(1,3),
             'draw_values' => json_encode($this->randomArray()),
             'draw_pot' => $this->faker->numberBetween(1000,4800000),
+            'draw_received' => 0,
+            'draw_paid' => 0,
             'draw_played' => true
         ];
     }

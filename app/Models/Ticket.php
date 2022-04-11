@@ -24,6 +24,8 @@ class Ticket extends Model
         'ticket_values',
         'ticket_price',
         'ticket_is_winner',
+        'ticket_matches',
+        'ticket_number_of_matches',
         'ticket_winning_sum',
         'ticket_user_id',
     ];

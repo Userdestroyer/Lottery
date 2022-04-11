@@ -17,8 +17,10 @@ return new class extends Migration
             $table->bigIncrements('draw_id');
             $table->foreignId('draw_type_id')->unsigned();
             $table->foreign('draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
-            $table->json('draw_values');
+            $table->json('draw_values')->nullable();
             $table->integer('draw_pot');
+            $table->integer('draw_received');
+            $table->integer('draw_paid');
             $table->boolean('draw_played');
             $table->timestamps();
         });

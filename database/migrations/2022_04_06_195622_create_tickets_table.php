@@ -23,7 +23,9 @@ return new class extends Migration
             $table->json('ticket_values');
             $table->integer('ticket_price');
             $table->boolean('ticket_is_winner');
-            $table->integer('ticket_winning_sum');
+            $table->integer('ticket_matches')->nullable();
+            $table->integer('ticket_number_of_matches')->nullable();
+            $table->integer('ticket_winning_sum')->nullable();
             $table->foreignId('ticket_user_id')->unsigned();
             $table->foreign('ticket_user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->timestamps();

@@ -19,6 +19,10 @@ use App\Http\Controllers\Api\DrawController;
 
 Route::get('/draw_types', [DrawTypeController::class, 'listAll']);
 
-Route::prefix('/ticket')->group(function () {
-    Route::post('/create', [TicketController::class, 'createTicket']);
+
+
+Route::group(['middleware' => 'auth:sanctum'], function() {
+    Route::prefix('/ticket')->group(function () {
+        Route::post('/create', [TicketController::class, 'createTicket']);
+    });
 });

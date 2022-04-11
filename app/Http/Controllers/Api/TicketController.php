@@ -40,7 +40,6 @@ class TicketController extends Controller
             $ticket->ticket_values = $request->ticket_values; //VERIFY BY DRAW TYPE
             $ticket->ticket_price = $request->ticket_price; //CUSTOM METHOD
             $ticket->ticket_is_winner = false;
-            $ticket->ticket_winning_sum = 0;
             $ticket->ticket_user_id = 1; //
 
         $ticket->save();

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('draw_types', function (Blueprint $table) {
             $table->bigIncrements('draw_type_id');
+            $table->string('draw_type')->unique();
             $table->string('draw_type_name');
             $table->integer('draw_type_volume');
             $table->integer('draw_type_min_of_values');
