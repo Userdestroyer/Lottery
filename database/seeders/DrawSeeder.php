@@ -21,17 +21,17 @@ class DrawSeeder extends Seeder
         Draw::factory(7)->create();
         for ($i = 1; $i<=3; $i++) {
             Draw::where([
-                ['draw_type_id', $i],
-                ['draw_played', '0']
-            ])->update(array('draw_played' => '1'));
+                ['type_id', $i],
+                ['is_played', '0']
+            ])->update(array('is_played' => '1'));
 
             DB::table('draws')->insert([
-                'draw_type_id' => $i,
-                'draw_values' => json_encode(array (7, 9, 12, 22, 27, 34)),
-                'draw_pot' => mt_rand(1000,4800000),
-                'draw_received' => 0,
-                'draw_paid' => 0,
-                'draw_played' => false,
+                'type_id' => $i,
+                'values' => json_encode(array (7, 9, 12, 22, 27, 34)),
+                'pot' => mt_rand(1000,4800000),
+                'received' => 0,
+                'paid' => 0,
+                'is_played' => false,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]);

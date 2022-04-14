@@ -15,9 +15,9 @@ class DrawTypeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'draw_type_name' => $this->draw_type_name,
-            'draw_image' => $this->draw_type_image,
-            'draw_type_description' => $this->draw_type_description
+            'name' => $this->name,
+            'image' => $this->image,
+            'description' => $this->description
         ];
     }
 }

@@ -18,15 +18,15 @@ class Ticket extends Model
     }
 
     protected $fillable = [
-        'ticket_draw_type_id',
-        'ticket_draw_id',
-        'ticket_number',
-        'ticket_values',
-        'ticket_price',
-        'ticket_is_winner',
-        'ticket_matches',
-        'ticket_number_of_matches',
-        'ticket_winning_sum',
-        'ticket_user_id',
+        'type_id',
+        'draw_id',
+        'number',
+        'values',
+        'price',
+        'is_winner',
+        'matches',
+        'number_of_matches',
+        'winning_sum',
+        'user_id',
     ];
 }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\DrawTypeController;
 use App\Http\Controllers\Api\TicketController;
 use App\Http\Controllers\Api\DrawController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,15 @@ use App\Http\Controllers\Api\DrawController;
 
 Route::get('/draw_types', [DrawTypeController::class, 'listAll']);
 
-
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
+
+    Route::post('/logout', [AuthController::class, 'logout']);
+
     Route::prefix('/ticket')->group(function () {
         Route::post('/create', [TicketController::class, 'createTicket']);
     });
 });
+

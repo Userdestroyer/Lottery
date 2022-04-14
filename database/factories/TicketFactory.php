@@ -23,14 +23,14 @@ class TicketFactory extends Factory
             $ar3 = array (4, 8, 7, 19, 20, 21, 27, 31)
         );
         return [
-            'ticket_draw_type_id' => $this->faker->numberBetween(1,3),
-            'ticket_draw_id' => $this->faker->numberBetween(1,3),
-            'ticket_number' => $this->faker->numberBetween(1,100),
-            'ticket_values' => json_encode($this->faker->randomElement($array)),
-            'ticket_price' => $this->faker->numberBetween(100,5000),
-            'ticket_is_winner' => (mt_rand(0,1) === 0),
-            'ticket_winning_sum' => $this->faker->numberBetween(0,5000),
-            'ticket_user_id' => $this->faker->numberBetween(1,10)
+            'type_id' => $this->faker->numberBetween(1,3),
+            'draw_id' => $this->faker->numberBetween(1,3),
+            'number' => $this->faker->numberBetween(1,100),
+            'values' => json_encode($this->faker->randomElement($array)),
+            'price' => $this->faker->numberBetween(100,5000),
+            'is_winner' => (mt_rand(0,1) === 0),
+            'winning_sum' => $this->faker->numberBetween(0,5000),
+            'user_id' => $this->faker->numberBetween(1,10)
         ];
     }
 }

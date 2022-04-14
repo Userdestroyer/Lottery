@@ -6,12 +6,12 @@ use App\Models\DrawType;
 
 class NumberGenerator {
 
-    public function run (int $draw_type_id, int $amount_of_values) {
+    public function run (int $id, int $amount_of_values) {
 
-        $draw_type = DrawType::where('draw_type_id',$draw_type_id)->first();
-        $volume = $draw_type->draw_type_volume;
-        $min = $draw_type->draw_type_min_of_values;
-        $max = $draw_type->draw_type_max_of_values;
+        $draw_type = DrawType::where('id',$id)->first();
+        $volume = $draw_type->volume;
+        $min = $draw_type->min_of_values;
+        $max = $draw_type->max_of_values;
 
         if ($amount_of_values < $min || $amount_of_values > $max) {
             return; // THROW AN EXCEPTION

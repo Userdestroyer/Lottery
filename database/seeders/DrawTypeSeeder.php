@@ -17,28 +17,28 @@ class DrawTypeSeeder extends Seeder
     {
         $draw_types = [
             [
-                'draw_type' => '5x36',
-                'draw_type_name' => '5 из 36',
-                'draw_type_volume' => 36,
-                'draw_type_min_of_values' => 5,
-                'draw_type_max_of_values' => 36,
-                'draw_type_description' => 'Empty',
+                'type' => '5x36',
+                'name' => '5 из 36',
+                'volume' => 36,
+                'min_of_values' => 5,
+                'max_of_values' => 36,
+                'description' => 'Empty',
             ],
             [
-                'draw_type' => '6x45',
-                'draw_type_name' => '6 из 45',
-                'draw_type_volume' => 45,
-                'draw_type_min_of_values' => 6,
-                'draw_type_max_of_values' => 45,
-                'draw_type_description' => 'Empty',
+                'type' => '6x45',
+                'name' => '6 из 45',
+                'volume' => 45,
+                'min_of_values' => 6,
+                'max_of_values' => 45,
+                'description' => 'Empty',
             ],
             [
-                'draw_type' => '7x49',
-                'draw_type_name' => '7 из 49',
-                'draw_type_volume' => 49,
-                'draw_type_min_of_values' => 7,
-                'draw_type_max_of_values' => 49,
-                'draw_type_description' => 'Empty',
+                'type' => '7x49',
+                'name' => '7 из 49',
+                'volume' => 49,
+                'min_of_values' => 7,
+                'max_of_values' => 49,
+                'description' => 'Empty',
             ]
         ];
 

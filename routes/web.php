@@ -13,28 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home');
-
-Route::prefix('/profile')->group(function () {
-    Route::view('/', 'profile');
-    Route::view('/info', 'info');
-    Route::view('/my_tickets', 'my_tickets');
-    Route::view('/cart', 'cart');
-});
-
-Route::prefix('/draws')->group(function () {
-    Route::view('/', 'draws');
-    Route::view('/draw', 'draw');
-});
-
-Route::prefix('/admin')->group(function () {
-    Route::view('/', 'admin_dashboard');
-});
-
-Route::view('/wallet', 'wallet');
-
-Route::view('/checkout', 'checkout');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::view('{any}', 'home')
+    ->where('any', '.*');

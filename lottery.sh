@@ -15,4 +15,4 @@ else
         sudo docker-compose run --rm $1 $2 $3 $4
     fi
 fi
-sudo chmod 777 -R ./
+#sudo chmod 777 -R ./

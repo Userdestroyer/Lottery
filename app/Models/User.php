@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     public function tickets(){
-        return $this->hasMany('App\Ticket', 'ticket_user_id','user_id');
+        return $this->hasMany('App\Ticket', 'user_id','id');
     }
 
     /**
@@ -22,11 +22,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_name',
-        'user_login',
-        'user_password',
-        'user_email',
-        'user_phone_number',
+        'name',
+        'password',
+        'email',
+        'phone_number',
+        'role',
+        'balance',
     ];
 
     /**
@@ -35,7 +36,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'user_password',
+        'password',
         'remember_token',
     ];
 

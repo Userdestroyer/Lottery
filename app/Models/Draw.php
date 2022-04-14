@@ -14,15 +14,15 @@ class Draw extends Model
     }
 
     public function tickets() {
-        return $this->hasMany('App\Ticket', 'ticket_draw_id','draw_id');
+        return $this->hasMany('App\Ticket', 'draw_id','id');
     }
 
     protected $fillable = [
-        'draw_type_id',
-        'draw_values',
-        'draw_pot',
-        'draw_received',
-        'draw_paid',
-        'draw_played',
+        'type_id',
+        'values',
+        'pot',
+        'received',
+        'paid',
+        'is_played',
     ];
 }

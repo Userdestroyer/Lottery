@@ -14,20 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->id('ticket_id');
-            $table->foreignId('ticket_draw_type_id')->unsigned();
-            $table->foreign('ticket_draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
-            $table->foreignId('ticket_draw_id')->unsigned();
-            $table->foreign('ticket_draw_id')->references('draw_id')->on('draws')->onDelete('cascade');
-            $table->integer('ticket_number');
-            $table->json('ticket_values');
-            $table->integer('ticket_price');
-            $table->boolean('ticket_is_winner');
-            $table->integer('ticket_matches')->nullable();
-            $table->integer('ticket_number_of_matches')->nullable();
-            $table->integer('ticket_winning_sum')->nullable();
-            $table->foreignId('ticket_user_id')->unsigned();
-            $table->foreign('ticket_user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->bigIncrements('id');
+            $table->foreignId('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('draw_types')->onDelete('cascade');
+            $table->foreignId('draw_id')->unsigned();
+            $table->foreign('draw_id')->references('id')->on('draws')->onDelete('cascade');
+            $table->integer('number');
+            $table->json('values');
+            $table->integer('price');
+            $table->boolean('is_winner');
+            $table->integer('matches')->nullable();
+            $table->integer('number_of_matches')->nullable();
+            $table->integer('winning_sum')->nullable();
+            $table->foreignId('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -124,6 +124,7 @@ services:
 
   npm:
     image: node:16.14.2
+    user: 1000:1000
     container_name: npm
     volumes:
         -   ./:/var/www/html

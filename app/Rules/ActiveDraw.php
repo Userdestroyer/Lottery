@@ -27,8 +27,8 @@ class ActiveDraw implements Rule
     public function passes($attribute, $value)
     {
         return Draw::where([
-            ['draw_type_id', $value],
-            ['draw_played', '0']
+            ['type_id', $value],
+            ['is_played', '0']
         ])->exists();
     }
 

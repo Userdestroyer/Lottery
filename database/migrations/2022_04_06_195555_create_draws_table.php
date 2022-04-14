@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('draws', function (Blueprint $table) {
-            $table->bigIncrements('draw_id');
-            $table->foreignId('draw_type_id')->unsigned();
-            $table->foreign('draw_type_id')->references('draw_type_id')->on('draw_types')->onDelete('cascade');
-            $table->json('draw_values')->nullable();
-            $table->integer('draw_pot');
-            $table->integer('draw_received');
-            $table->integer('draw_paid');
-            $table->boolean('draw_played');
+            $table->bigIncrements('id');
+            $table->foreignId('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('draw_types')->onDelete('cascade');
+            $table->json('values')->nullable();
+            $table->integer('pot');
+            $table->integer('received');
+            $table->integer('paid');
+            $table->boolean('is_played');
             $table->timestamps();
         });
     }

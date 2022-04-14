@@ -20,10 +20,10 @@ class NumberGeneratorTest extends TestCase
     {
         $seeder = new DrawTypeSeeder();
         $seeder->call(DrawTypeSeeder::class);
-        $ids = DrawType::where('draw_type_id' ,'>' ,0)->pluck('draw_type_id')->toArray();
+        $ids = DrawType::where('id' ,'>' ,0)->pluck('id')->toArray();
         foreach ($ids as $id) {
-            $min = DrawType::where('draw_type_id',$id)->value('draw_type_min_of_values');
-            $max = DrawType::where('draw_type_id',$id)->value('draw_type_max_of_values');
+            $min = DrawType::where('id',$id)->value('min_of_values');
+            $max = DrawType::where('id',$id)->value('max_of_values');
             for ($n = $min; $n <= $max; $n++) {
                 $generator = new NumberGenerator();
                 $this->assertEquals($n, count($generator->run($id, $n)));

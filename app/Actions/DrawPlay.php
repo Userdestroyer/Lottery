@@ -18,7 +18,7 @@ class DrawPlay {
 
     public function fillNumbers (DrawType $draw_type, Draw $draw) {
         $numbers = new NumberGenerator();
-        $draw->draw_values = $numbers->run($draw_type->draw_type_id, $draw_type->draw_type_min_of_values);
+        $draw->values = $numbers->run($draw_type->id, $draw_type->min_of_values);
         $draw->save();
     }
 
@@ -30,10 +30,10 @@ class DrawPlay {
 
     public function play (string $type) {
 
-        $draw_type = DrawType::where('draw_type', $type)->get();
+        $draw_type = DrawType::where('type', $type)->get();
         $draw = Draw::where([
-            ['draw_type_id', $draw_type->draw_type_id],
-            ['draw_played', '0']
+            ['type_id', $draw_type->id],
+            ['is_played', '0']
         ])->get();
 
         $this->closeActiveDraw($draw);
