@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\Draw;
+use App\Models\User;
 use App\Models\DrawType;
 use App\Rules\ActiveDraw;
+use App\Actions\Transfer;
 
 class TicketController extends Controller
 {
@@ -24,31 +26,39 @@ class TicketController extends Controller
         $this->validate($request, $rules);
 
         //user id+create data
-        $ticket = new Ticket();
+            $ticket = new Ticket();
+            $user_id = auth()->user()->id;
+            $user = User::find($user_id);
+            $number = 0;
+                $ticket->type_id = $request->type_id;
+                $ticket->draw_id = Draw::where([
+                    ['type_id', $request->type_id],
+                    ['is_played', '0']
+                    ])->value('id');
 
-        $number = 0;
-            $ticket->type_id = $request->type_id;
-            $ticket->draw_id = Draw::where([
-                ['type_id', $request->type_id],
-                ['is_played', '0']
-                ])->value('id');
+                    if (Ticket::where('draw_id', $ticket->draw_id)->exists()) {
+                        $number = Ticket::where('draw_id', $ticket->draw_id)->max('number');
+                    }
+                $ticket->number = ++$number;
+                $ticket->values = $request->values; //VERIFY BY DRAW TYPE
+                $ticket->price = $request->price; //CUSTOM METHOD
+                $ticket->is_winner = false;
+                $ticket->user_id = $user_id; // UPDATE
 
-                if (Ticket::where('draw_id', $ticket->draw_id)->exists()) {
-                    $number = Ticket::where('draw_id', $ticket->draw_id)->max('number');
-                }
-            $ticket->number = ++$number;
-            $ticket->values = $request->values; //VERIFY BY DRAW TYPE
-            $ticket->price = $request->price; //CUSTOM METHOD
-            $ticket->is_winner = false;
-            $ticket->user_id = auth()->user()->id; // UPDATE
+            return \DB::transaction(function () use ($request, $ticket, $user){
+                $transfer = new Transfer();
+                $transfer->run($user->payAccount->id, 11, $request->price, 'Ticket purchase');
 
-        $ticket->save();
+                $ticket->save();
 
-        //response
-        return response()->json([
-            "status" => 1,
-            "Message" => "Ticket has been created"
-        ]);
+                return response()->json([
+                    "status" => 1,
+                    "Message" => "Ticket has been created"
+                ]);
+            });
+
+            //response
+
 
     }
 }

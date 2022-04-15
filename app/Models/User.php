@@ -12,8 +12,12 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function tickets(){
-        return $this->hasMany('App\Ticket', 'user_id','id');
+    public function tickets (){
+        return $this->hasMany(Ticket::class, 'user_id','id');
+    }
+
+    public function payAccount (){
+        return $this->hasOne(PayAccount::class, 'user_id','id');
     }
 
     /**
@@ -27,7 +31,6 @@ class User extends Authenticatable
         'email',
         'phone_number',
         'role',
-        'balance',
     ];
 
     /**

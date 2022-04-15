@@ -23,9 +23,9 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'role' => 'user',
-            'balance' => 0
+            'role' => 'user'
         ]);
+        $user->payAccount()->create(['balance' => '0']);
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 

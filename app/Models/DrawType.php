@@ -10,7 +10,7 @@ class DrawType extends Model
     use HasFactory;
 
     public function draws(){
-        return $this->hasMany('App\Draw', 'type_id','id');
+        return $this->hasMany(Draw::class, 'type_id','id');
     }
 
     protected $fillable = [
