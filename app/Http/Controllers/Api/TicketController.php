@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\DrawType;
 use App\Rules\ActiveDraw;
 use App\Actions\Transfer;
+use App\Models\Company;
 
 class TicketController extends Controller
 {
@@ -25,6 +26,9 @@ class TicketController extends Controller
 
         $this->validate($request, $rules);
 
+        $company_name = 'Lotto';
+        $company_id = Company::where('name', $company_name)->first();
+        $company_id = $company_id->payAccount()->value('id');
         //user id+create data
             $ticket = new Ticket();
             $user_id = auth()->user()->id;
@@ -45,9 +49,9 @@ class TicketController extends Controller
                 $ticket->is_winner = false;
                 $ticket->user_id = $user_id; // UPDATE
 
-            return \DB::transaction(function () use ($request, $ticket, $user){
+            return \DB::transaction(function () use ($request, $ticket, $user, $company_id){
                 $transfer = new Transfer();
-                $transfer->run($user->payAccount->id, 11, $request->price, 'Ticket purchase');
+                $transfer->run($user->payAccount->id, $company_id, $request->price, 'Ticket purchase');
 
                 $ticket->save();
 
