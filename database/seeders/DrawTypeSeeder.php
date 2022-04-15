@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\DrawType;
+use App\Models\PayAccount;
 
 class DrawTypeSeeder extends Seeder
 {
@@ -22,6 +23,7 @@ class DrawTypeSeeder extends Seeder
                 'volume' => 36,
                 'min_of_values' => 5,
                 'max_of_values' => 36,
+                'fee_percentage' => 0.5,
                 'description' => 'Empty',
             ],
             [
@@ -30,6 +32,7 @@ class DrawTypeSeeder extends Seeder
                 'volume' => 45,
                 'min_of_values' => 6,
                 'max_of_values' => 45,
+                'fee_percentage' => 0.5,
                 'description' => 'Empty',
             ],
             [
@@ -38,12 +41,44 @@ class DrawTypeSeeder extends Seeder
                 'volume' => 49,
                 'min_of_values' => 7,
                 'max_of_values' => 49,
+                'fee_percentage' => 0.5,
                 'description' => 'Empty',
             ]
         ];
 
-        foreach ($draw_types as $draw_type) {
-            DrawType::firstOrCreate($draw_type);
+        $prize_charts = [
+            [
+                '2_match_level' => 100,
+                '3_match_level' => 1000,
+                '4_match_level' => 10000
+            ],
+            [
+                '2_match_level' => 100,
+                '3_match_level' => 1000,
+                '4_match_level' => 10000,
+                '5_match_level' => 100000,
+            ],
+            [
+                '2_match_level' => 100,
+                '3_match_level' => 1000,
+                '4_match_level' => 10000,
+                '5_match_level' => 100000,
+                '6_match_level' => 500000,
+
+            ]
+        ];
+
+        for ($i=0; $i < count($draw_types); $i++) {
+            $newDraw = DrawType::firstOrCreate($draw_types[$i]);
+            $newDraw->payAccount()->create([
+                'description' => 'Prize fund',
+                'balance' => 0
+            ]);
+            $newDraw->payAccount()->create([
+                'description' => 'Pot',
+                'balance' => 1000000
+            ]);
+            $newDraw->prizeChart()->create($prize_charts[$i]);
         }
     }
 }

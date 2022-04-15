@@ -28,7 +28,6 @@ class DrawSeeder extends Seeder
             DB::table('draws')->insert([
                 'type_id' => $i,
                 'values' => json_encode(array (7, 9, 12, 22, 27, 34)),
-                'pot' => mt_rand(1000,4800000),
                 'received' => 0,
                 'paid' => 0,
                 'is_played' => false,

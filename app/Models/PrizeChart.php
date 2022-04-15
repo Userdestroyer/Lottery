@@ -5,27 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PayAccount extends Model
+class PrizeChart extends Model
 {
     use HasFactory;
-
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
 
     public function drawType() {
         return $this->belongsTo(DrawType::class);
     }
 
-    public function company() {
-        return $this->belongsTo(Company::class);
-    }
-
     protected $fillable = [
-        'user_id',
         'draw_type_id',
-        'company_id',
-        'description',
-        'balance',
+        '1_match_level',
+        '2_match_level',
+        '3_match_level',
+        '4_match_level',
+        '5_match_level',
+        '6_match_level',
+        '7_match_level',
+        '8_match_level',
+        '9_match_level',
+        '10_match_level'
     ];
 }

@@ -17,14 +17,9 @@ class Draw extends Model
         return $this->hasMany(Ticket::class, 'draw_id','id');
     }
 
-    public function payAccounts(){
-        return $this->hasMany(PayAccount::class, 'draw_id','id');
-    }
-
     protected $fillable = [
         'type_id',
         'values',
-        'pot',
         'received',
         'paid',
         'is_played',

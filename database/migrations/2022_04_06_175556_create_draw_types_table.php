@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('volume');
             $table->integer('min_of_values');
             $table->integer('max_of_values');
+            $table->decimal('fee_percentage');
             $table->string('image')->nullable();
             $table->text('description');
             $table->timestamps();

@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pay_accounts', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->foreignId('user_id')->nullable()->constrained('users');
-            $table->foreignId('draw_type_id')->nullable()->constrained('draw_types');
+            $table->foreignId('draw_type_id')->nullable()->references('id')->on('draw_types');
             $table->foreignId('company_id')->nullable()->constrained('companies');
             $table->string('description')->nullable();
             $table->integer('balance');

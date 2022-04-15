@@ -2,36 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d50cb571-6482-4d98-b080-ba3a814ce5c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Actions/Transfer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PayAccountController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Operation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PayAccount.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CompanyFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/PayAccountFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_14_000000_create_companies_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_14_162126_create_pay_accounts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_14_162141_create_transactions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_14_191438_create_operations_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/TransferTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/NegativeAmountException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/NotEnoughMoneyException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/TransferSameIdException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PrizeChart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_15_160135_create_prize_charts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Transfer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Draw.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Draw.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/DrawType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DrawType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/TicketSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TicketSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PayAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PayAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DrawFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DrawFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_14_162126_create_pay_accounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_14_162126_create_pay_accounts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/TransferTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TransferTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +83,9 @@
     <setting file="file://$PROJECT_DIR$/app/Http/Resources/DrawTypeResource.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lottery.sh" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_15_160135_create_prize_charts_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/DrawSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Models/PrizeChart.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Actions/CompareValues.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/UserSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -276,7 +266,7 @@
       <workItem from="1649763610401" duration="9216000" />
       <workItem from="1649864157846" duration="4789000" />
       <workItem from="1649906170875" duration="31775000" />
-      <workItem from="1650001813170" duration="17505000" />
+      <workItem from="1650001813170" duration="27923000" />
     </task>
     <servers />
   </component>
