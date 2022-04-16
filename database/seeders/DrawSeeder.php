@@ -5,8 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Draw;
+use App\Models\DrawType;
 use Database\Factories\DrawFactory;
 use Illuminate\Support\Facades\DB;
+use App\Actions\NumberGenerator;
 
 class DrawSeeder extends Seeder
 {
@@ -17,24 +19,25 @@ class DrawSeeder extends Seeder
      */
     public function run()
     {
-
-        Draw::factory(7)->create();
-        for ($i = 1; $i<=3; $i++) {
-            Draw::where([
-                ['type_id', $i],
-                ['is_played', '0']
-            ])->update(array('is_played' => '1'));
-
-            DB::table('draws')->insert([
-                'type_id' => $i,
-                'values' => json_encode(array (7, 9, 12, 22, 27, 34)),
-                'received' => 0,
-                'paid' => 0,
-                'is_played' => false,
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
-            ]);
+        $DrawTypesIds = DrawType::where('id', '>', 0)->pluck('id')->toArray();
+        $generator = new NumberGenerator();
+        $n = 10; //NUMBER OF FACTORY ITERATIONS
+            for ($i = 1; $i <= $n; $i++) {
+                foreach ($DrawTypesIds as $id){
+                    $drawType = DrawType::find($id);
+                if ($i<$n) {
+                    Draw::factory()->create([
+                        'type_id' => $drawType->id,
+                        'values' => json_encode($generator->run($drawType->id, $drawType->min_of_values))
+                    ]);
+                } else {
+                    Draw::factory()->create([
+                        'type_id' => $drawType->id,
+                        'values' => json_encode($generator->run($drawType->id, $drawType->min_of_values)),
+                        'is_played' => false
+                    ]);
+                }
+            }
         }
-
     }
 }

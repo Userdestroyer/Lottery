@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('prize_charts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('draw_type_id')->nullable()->constrained('draw_types');
+            $table->integer('winner_after')->nullable();
             $table->integer('1_match_level')->nullable();
             $table->integer('2_match_level')->nullable();
             $table->integer('3_match_level')->nullable();

@@ -13,8 +13,13 @@ class PrizeChart extends Model
         return $this->belongsTo(DrawType::class);
     }
 
+    public function draw() {
+        return $this->belongsTo(Draw::class);
+    }
+
     protected $fillable = [
         'draw_type_id',
+        'winner_after',
         '1_match_level',
         '2_match_level',
         '3_match_level',

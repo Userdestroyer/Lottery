@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\DrawType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,20 +18,16 @@ class TicketFactory extends Factory
 
     public function definition()
     {
-        $array = array (
-            $ar1 = array (7, 9, 12, 22, 27, 34),
-            $ar2 = array (1, 3, 6, 11, 22, 30, 35),
-            $ar3 = array (4, 8, 7, 19, 20, 21, 27, 31)
-        );
         return [
-            'type_id' => $this->faker->numberBetween(1,3),
-            'draw_id' => $this->faker->numberBetween(1,3),
-            'number' => $this->faker->numberBetween(1,100),
-            'values' => json_encode($this->faker->randomElement($array)),
+            'type_id' => 1,
+            'draw_id' => 1,
+            'number' => 1,
+            'values' => json_encode([0, 0, 0, 0, 0, 0]),
             'price' => $this->faker->numberBetween(100,5000),
-            'is_winner' => (mt_rand(0,1) === 0),
-            'winning_sum' => $this->faker->numberBetween(0,5000),
-            'user_id' => $this->faker->numberBetween(1,10)
+            'is_winner' => false,
+            'winning_sum' => 0,
+            'balance' => 0,
+            'user_id' => 1
         ];
     }
 }

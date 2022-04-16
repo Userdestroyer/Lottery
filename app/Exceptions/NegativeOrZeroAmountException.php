@@ -4,7 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 
-class NegativeAmountException extends Exception
+class NegativeOrZeroAmountException extends Exception
 {
     //
 }

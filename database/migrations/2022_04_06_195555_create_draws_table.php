@@ -18,8 +18,6 @@ return new class extends Migration
             $table->foreignId('type_id')->unsigned();
             $table->foreign('type_id')->references('id')->on('draw_types')->onDelete('cascade');
             $table->json('values')->nullable();
-            $table->integer('received');
-            $table->integer('paid');
             $table->boolean('is_played');
             $table->timestamps();
         });

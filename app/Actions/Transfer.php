@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Actions;
-use App\Exceptions\NegativeAmountException;
+use App\Exceptions\NegativeOrZeroAmountException;
 use App\Exceptions\NotEnoughMoneyException;
 use App\Exceptions\TransferSameIdException;
 use App\Models\PayAccount;
@@ -14,8 +14,8 @@ class Transfer {
         // VALIDATION
         if ($sender_id == $receiver_id) {
             throw new TransferSameIdException('Same Id for sender and receiver');
-        } else if ($amount < 0) {
-            throw new NegativeAmountException('Transfer amount cannot be negative');
+        } else if ($amount <= 0) {
+            throw new NegativeOrZeroAmountException('Transfer amount cannot be zero or negative');
         }
         //FETCHING
         $sender = PayAccount::findOrFail($sender_id);

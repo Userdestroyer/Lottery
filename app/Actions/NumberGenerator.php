@@ -7,7 +7,6 @@ use App\Models\DrawType;
 class NumberGenerator {
 
     public function run (int $id, int $amount_of_values) {
-
         $draw_type = DrawType::where('id',$id)->first();
         $volume = $draw_type->volume;
         $min = $draw_type->min_of_values;

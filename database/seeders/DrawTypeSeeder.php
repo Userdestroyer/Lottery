@@ -48,17 +48,20 @@ class DrawTypeSeeder extends Seeder
 
         $prize_charts = [
             [
+                'winner_after' => 2,
                 '2_match_level' => 100,
                 '3_match_level' => 1000,
                 '4_match_level' => 10000
             ],
             [
+                'winner_after' => 2,
                 '2_match_level' => 100,
                 '3_match_level' => 1000,
                 '4_match_level' => 10000,
                 '5_match_level' => 100000,
             ],
             [
+                'winner_after' => 2,
                 '2_match_level' => 100,
                 '3_match_level' => 1000,
                 '4_match_level' => 10000,

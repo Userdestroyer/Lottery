@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('matches')->nullable();
             $table->integer('number_of_matches')->nullable();
             $table->integer('winning_sum')->nullable();
+            $table->integer('balance')->nullable();
             $table->foreignId('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

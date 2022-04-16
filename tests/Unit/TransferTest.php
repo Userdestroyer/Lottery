@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\Actions\NumberGenerator;
-use App\Exceptions\NegativeAmountException;
+use App\Exceptions\NegativeOrZeroAmountException;
 use App\Exceptions\NotEnoughMoneyException;
 use App\Exceptions\TransferSameIdException;
 use Database\Seeders\CompanySeeder;
@@ -58,7 +58,7 @@ class TransferTest extends TestCase
         $receiver = PayAccount::where('id','!=', $sender->id)->inRandomOrder()->limit(1)->first();
 
         $transfer = new Transfer();
-        $this->expectException(NegativeAmountException::class);
+        $this->expectException(NegativeOrZeroAmountException::class);
         $transfer->run($sender->id, $receiver->id, -500, 'TEST');
     }
 

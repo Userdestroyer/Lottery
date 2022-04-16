@@ -27,6 +27,7 @@ class Ticket extends Model
         'matches',
         'number_of_matches',
         'winning_sum',
+        'balance',
         'user_id',
     ];
 }
