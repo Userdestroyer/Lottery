@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('min_of_values');
             $table->integer('max_of_values');
             $table->decimal('fee_percentage');
+            $table->integer('pot_min_amount');
             $table->string('image')->nullable();
             $table->text('description');
             $table->timestamps();

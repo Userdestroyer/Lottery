@@ -23,7 +23,7 @@ return new class extends Migration
             $table->json('values');
             $table->integer('price');
             $table->boolean('is_winner');
-            $table->integer('matches')->nullable();
+            $table->json('matches')->nullable();
             $table->integer('number_of_matches')->nullable();
             $table->integer('winning_sum')->nullable();
             $table->integer('balance')->nullable();

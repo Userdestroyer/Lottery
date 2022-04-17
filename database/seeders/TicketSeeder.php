@@ -25,10 +25,10 @@ class TicketSeeder extends Seeder
         //FOR UNPLAYED
         $DrawIds = Draw::where('is_played', false)->pluck('id')->toArray();
         $generator = new NumberGenerator();
-        $n = 10; //NUMBER OF FACTORY ITERATIONS
+        $n = 100; //NUMBER OF FACTORY ITERATIONS
         foreach ($DrawIds as $id){
             $draw = Draw::find($id);
-            $number = 0;
+            $number = 0; // INITIAL TICKET NUMBER
             for ($i = 1; $i <= $n; $i++) {
                 $user = User::where('id','>', 0)->inRandomOrder()->limit(1)->first();
                 $values = json_encode($generator->run($draw->type_id, mt_rand(

@@ -19,6 +19,12 @@ class DrawSeeder extends Seeder
      */
     public function run()
     {
+        $unplayedDrawIds = Draw::where('is_played', false)->pluck('id')->toArray();
+        foreach ($unplayedDrawIds as $singleId) {
+            $draw = Draw::find($singleId);
+            $draw->is_played = true;
+            $draw->save();
+        }
         $DrawTypesIds = DrawType::where('id', '>', 0)->pluck('id')->toArray();
         $generator = new NumberGenerator();
         $n = 10; //NUMBER OF FACTORY ITERATIONS

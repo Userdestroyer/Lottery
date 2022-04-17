@@ -22,8 +22,9 @@ class DrawTypeSeeder extends Seeder
                 'name' => '5 из 36',
                 'volume' => 36,
                 'min_of_values' => 5,
-                'max_of_values' => 36,
+                'max_of_values' => 12,
                 'fee_percentage' => 0.5,
+                'pot_min_amount' => 1000000,
                 'description' => 'Empty',
             ],
             [
@@ -31,8 +32,9 @@ class DrawTypeSeeder extends Seeder
                 'name' => '6 из 45',
                 'volume' => 45,
                 'min_of_values' => 6,
-                'max_of_values' => 45,
+                'max_of_values' => 12,
                 'fee_percentage' => 0.5,
+                'pot_min_amount' => 1000000,
                 'description' => 'Empty',
             ],
             [
@@ -40,8 +42,9 @@ class DrawTypeSeeder extends Seeder
                 'name' => '7 из 49',
                 'volume' => 49,
                 'min_of_values' => 7,
-                'max_of_values' => 49,
+                'max_of_values' => 15,
                 'fee_percentage' => 0.5,
+                'pot_min_amount' => 1000000,
                 'description' => 'Empty',
             ]
         ];
@@ -75,7 +78,7 @@ class DrawTypeSeeder extends Seeder
             $newDraw = DrawType::firstOrCreate($draw_types[$i]);
             $newDraw->payAccount()->create([
                 'description' => 'Prize fund',
-                'balance' => 0
+                'balance' => 500000
             ]);
             $newDraw->payAccount()->create([
                 'description' => 'Pot',

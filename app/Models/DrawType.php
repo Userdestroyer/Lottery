@@ -28,6 +28,7 @@ class DrawType extends Model
         'min_of_values',
         'max_of_values',
         'fee_percentage',
+        'pot_min_amount',
         'image',
         'description',
     ];

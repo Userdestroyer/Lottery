@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d50cb571-6482-4d98-b080-ba3a814ce5c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Unit/DrawPlayTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Actions/DrawPlay.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/DrawPlay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/NumberGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/NumberGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Transfer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/NegativeAmountException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/NegativeOrZeroAmountException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Draw.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Draw.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PrizeChart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PrizeChart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/DrawFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DrawFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TicketFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TicketFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DrawType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DrawType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_15_160135_create_prize_charts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_15_160135_create_prize_charts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/TicketSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TicketSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/TransferTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TransferTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/DrawPlayTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/DrawPlayTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +261,10 @@
       <workItem from="1649864157846" duration="4789000" />
       <workItem from="1649906170875" duration="31775000" />
       <workItem from="1650001813170" duration="30096000" />
-      <workItem from="1650086207753" duration="16442000" />
+      <workItem from="1650086207753" duration="17298000" />
+      <workItem from="1650125446071" duration="315000" />
+      <workItem from="1650125962946" duration="15686000" />
+      <workItem from="1650175344521" duration="1361000" />
     </task>
     <servers />
   </component>

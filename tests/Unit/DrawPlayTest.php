@@ -19,14 +19,14 @@ class DrawPlayTest extends TestCase
 
     use RefreshDatabase;
     /**
-     * @test
+     * test
      */
     public function update_tickets_test()
     {
         $this->expectNotToPerformAssertions();
         $seeder = new DatabaseSeeder();
-        $seeder->call(DrawTypeSeeder::class);
         $seeder->call(UserSeeder::class);
+        $seeder->call(DrawTypeSeeder::class);
         $seeder->call(DrawSeeder::class);
         $seeder->call(TicketSeeder::class);
         $drawPlay = new DrawPlay();
@@ -38,5 +38,22 @@ class DrawPlayTest extends TestCase
         ])->first();
 
         $drawPlay->updateTickets($draw);
+    }
+
+    /**
+     * @test
+     */
+    public function play_test()
+    {
+        $this->expectNotToPerformAssertions();
+        $seeder = new DatabaseSeeder();
+        $seeder->call(UserSeeder::class);
+        $seeder->call(DrawTypeSeeder::class);
+        $seeder->call(DrawSeeder::class);
+        $seeder->call(TicketSeeder::class);
+        $drawPlay = new DrawPlay();
+
+
+        $drawPlay->play('6x45');
     }
 }

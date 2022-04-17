@@ -24,7 +24,10 @@ class CompanySeeder extends Seeder
             ];
 
         $new = Company::firstOrCreate($company);
-        $payAccount = PayAccount::factory()->make();
+        $payAccount = PayAccount::factory()->make([
+            'description' => "Lotto's balance",
+            'balance' => 1000000000
+        ]);
         $new->payAccount()->save($payAccount);
 
     }
