@@ -62,6 +62,10 @@ class DrawPlay {
         $potMinAmount = $draw->draw_type()->value('pot_min_amount');
         $transfer = new Transfer();
 
+        $feePercentage = $draw->draw_type()->value('fee_percentage');
+        $feeSum = $prizeFundPayAccount->balance * $feePercentage;
+        $transfer->run($prizeFundPayAccount, $lottoPayAccount, $feeSum, 'Fee Payment');
+
         if ($sumToPay > $prizeFundPayAccount->balance) {
             if ($sumToPay - $prizeFundPayAccount->balance > $potPayAccount->balance - $potMinAmount) {
                 $sumFromPot = $potPayAccount->balance - $potMinAmount;
@@ -69,14 +73,14 @@ class DrawPlay {
 
                 return \DB::transaction(function () use ($transfer, $potPayAccount, $prizeFundPayAccount,
                     $lottoPayAccount, $sumFromPot, $sumFromCompanyAccount) {
-                    $transfer->run($potPayAccount->id, $prizeFundPayAccount->id,
+                    $transfer->run($potPayAccount, $prizeFundPayAccount,
                         $sumFromPot, 'Prize Fund Top Up');
-                    $transfer->run($lottoPayAccount->id, $prizeFundPayAccount->id,
+                    $transfer->run($lottoPayAccount, $prizeFundPayAccount,
                         $sumFromCompanyAccount, 'Prize Fund Top Up');
                 });
             }
             $sumFromPot = $sumToPay - $prizeFundPayAccount->balance;
-            $transfer->run($potPayAccount->id, $prizeFundPayAccount->id, $sumFromPot, 'Prize Fund Top Up');
+            $transfer->run($potPayAccount, $prizeFundPayAccount, $sumFromPot, 'Prize Fund Top Up');
             return;
         }
         return;
@@ -85,6 +89,8 @@ class DrawPlay {
     public function pay (Draw $draw) {
         $prizeFundPayAccount = PayAccount::where('draw_type_id', $draw->type_id)
             ->where('description', 'Prize fund')->first();
+        $potPayAccount = PayAccount::where('draw_type_id', $draw->type_id)
+            ->where('description', 'Pot')->first();
         $winnerTicketIds = Ticket::where('draw_id', $draw->id)->where('is_winner', true)->pluck('id')->toArray();
         $transfer = new Transfer();
         foreach ($winnerTicketIds as $id) {
@@ -92,8 +98,11 @@ class DrawPlay {
             $user = $ticket->user()->first();
             $userPayAccount = PayAccount::where('user_id', $user->id)->first();
             $amount = $ticket->winning_sum;
-            $transfer->run($prizeFundPayAccount->id, $userPayAccount->id, $amount, 'Prize Payment');
+            $transfer->run($prizeFundPayAccount, $userPayAccount, $amount, 'Prize Payment');
         }
+        var_dump($prizeFundPayAccount->balance);
+        $transfer->run($prizeFundPayAccount, $potPayAccount,
+            $prizeFundPayAccount->balance, 'Pot Top Up');
     }
 
     public function newDraw (DrawType $drawType) {
@@ -115,8 +124,11 @@ class DrawPlay {
 
         $this->closeActiveDraw($draw);
         $this->fillNumbers($draw_type, $draw);
-        $this->collectSum($draw, $this->updateTickets($draw));
-        $this->pay($draw);
+        $sumToPay = $this->updateTickets($draw);
+        if ($sumToPay > 0) {
+            $this->collectSum($draw, $sumToPay);
+            $this->pay($draw);
+        }
         $this->newDraw($draw_type);
 
     }

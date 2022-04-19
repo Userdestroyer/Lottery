@@ -2,18 +2,105 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d50cb571-6482-4d98-b080-ba3a814ce5c6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Profile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Register.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Sidebar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lottery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lottery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Actions/DrawPlay.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/DrawPlay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DrawType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DrawType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/TicketSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TicketSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Transfer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sanctum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/046b620491f9bc4ea2dd019bc049308b.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/075b2e5d27b09b226fd0097aaef4468d.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/0ac6d9786756d01723ded09e0a89a8e8.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/0c406e89d1aa43c4a70c075718256008.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/1305bc8b5e470e3e751c61b42f92b76b.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/193f68f6f7d02cc9f6ffa1d15931e294.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/1a067b59a7366690a715b98f4c5955a9.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/21bb4cdba3517e06644a462f9c6043dd.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/23d07903397d61e604f143fc40f9e148.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/2e97abad45c51529114059b16d4498e7.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/319909f12e77e25c0317a336d7837bc8.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/46b49262478968c6ba964d7fd3c3302a.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/47b3e2608884f2adb249bb1231be97d7.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/4a1ba66c27160786a94aead2432cd153.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/4e490cc1ae579715adb494945c26df5f.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/5888b51236befa07d900b2aa572fdcfe.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/5ef19657857f6a96fa5d09840a3cbe12.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/61e425f1085c1091deb4af1fd4d32603.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/64a2229cf806ca6a0390e1c080b39e67.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/65f722e034b729e1e9c56682166367b4.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/6ad462ad57a655b36174d42ee110b347.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/75fc06a821c2089f3c54227efb0db690.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/79384c1df268a2e883b7d496d098c265.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/79c2441d73713e1f84ef1b1f117e5866.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/7a58147f3600dd2f2a39982b3fe773d2.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/7f5477ea3c08efad7730dd60bae6a858.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/8dd2bc5bf9ec0aa783388927d025e227.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/9fdcb3e3f787c69061a105a9b6231aae.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a11681c34954ee0222fb77863b9ab484.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a1a2cdfa815b8ed6779ff528eb04d836.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a1f80dab055f7de27d761001004b7d78.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a5d23b2f538e20f3046b43af10272be6.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a77ce99a870fdc96e0a4c309465ae1a8.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a907cb53741141981f37a016a14a3754.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/abdfd6476553c315d57cfbd751495c7f.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/b4b6643e19536a79f25e68701489457a.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/b639ca9df4eb3c2ce5f6b691f83ac7d6.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/b9509f9b519dd45ae271420e99bfc885.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/bd930d9ac048c40d117ac460cedc4175.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c0c484fb9a86465cc03b73b83478cb69.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c2d728e2dee1ea3950db44278a27ae65.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c78a63c2aa2697fe5fd79dbbe24c1657.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/ca44276ac532964884f6bbad2d7b615c.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/db38acf5a94715eab6b98ad72195dfe7.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/e71985d1b1628b59e1fdd07f2d419622.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/e92167bdd94324349f8547b430462b3b.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/ea062e06575eeb02ae9572d9655af3d2.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/f1189135ae20bfedfec80665cf3838d5.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/f7fd9f8583045760ee7180b58e68ef6e.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/Dashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/Front.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cart.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/checkout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/draw.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/draws.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/info.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/my_tickets.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallet.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/DrawPlayTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/DrawPlayTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/TransferTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TransferTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,51 +128,56 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/resources/components/Front.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/config/sanctum.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Rules/ActiveDraw.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_191438_create_operations_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/config/database.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/webpack.mix.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Actions/NumberGenerator.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tests/Unit/NumberGeneratorTest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/views/home.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/phpunit.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/factories/UserFactory.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/app.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_06_195555_create_draws_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/factories/PayAccountFactory.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/router/index.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.env.testing" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Actions/DrawPlay.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/routes/web.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/seeders/CompanySeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/tests/CreatesApplication.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_000000_create_companies_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_06_175556_create_draw_types_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Models/Company.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TicketController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/tests/TestCase.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_162126_create_pay_accounts_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_162141_create_transactions_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Models/PayAccount.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Models/Transaction.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/DrawTypeSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Resources/DrawTypeResource.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lottery.sh" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_15_160135_create_prize_charts_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/DrawSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Models/PrizeChart.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Actions/CompareValues.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/seeders/UserSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_06_195622_create_tickets_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/routes/api.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Models/User.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_191438_create_operations_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/webpack.mix.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/home.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/phpunit.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/components/Login.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/seeders/CompanySeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tests/CreatesApplication.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_000000_create_companies_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Models/Company.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tests/TestCase.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_162126_create_pay_accounts_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_14_162141_create_transactions_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Models/PayAccount.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/components/Profile.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Models/Transaction.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2022_04_15_160135_create_prize_charts_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Models/PrizeChart.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/components/Sidebar.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/components/Register.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Actions/CompareValues.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -208,6 +300,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="27W3D2Qtyz02LoefGWnSOPcEROo" />
@@ -264,7 +357,11 @@
       <workItem from="1650086207753" duration="17298000" />
       <workItem from="1650125446071" duration="315000" />
       <workItem from="1650125962946" duration="15686000" />
-      <workItem from="1650175344521" duration="1361000" />
+      <workItem from="1650175344521" duration="5502000" />
+      <workItem from="1650219965550" duration="2362000" />
+      <workItem from="1650266925963" duration="10180000" />
+      <workItem from="1650359092288" duration="1348000" />
+      <workItem from="1650360567842" duration="17320000" />
     </task>
     <servers />
   </component>

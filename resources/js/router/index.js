@@ -1,18 +1,33 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Front from "../../components/Front.vue";
-import Dashboard from "../../components/Dashboard";
+import Login from "../../components/Login";
+import Register from "../../components/Register";
+import Home from "../../components/Home";
+import Profile from "../../components/Profile";
+
+
 
 const routes = [
     {
-        path: '/',
-        name: 'home',
-        component: Front
+        path: '/login',
+        name: 'login',
+        component: Login
     },
     {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: Dashboard
+        path: '/register',
+        name: 'register',
+        component: Register
+    },
+    {
+        path: '/',
+        name: 'home',
+        component: Home
+    },
+    {
+        path: '/profile',
+        name: 'profile',
+        component: Profile,
+        meta: {requiresAuth: true}
     }
 ]
 

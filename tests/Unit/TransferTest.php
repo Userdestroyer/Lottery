@@ -34,7 +34,7 @@ class TransferTest extends TestCase
             $sender_before = $sender->balance;
             $receiver_before = $receiver->balance;
             $transfer = new Transfer();
-            $transfer->run($sender->id, $receiver->id, $amount, 'TEST');
+            $transfer->run($sender, $receiver, $amount, 'TEST');
             // maybe fetch again
             $sender_after = PayAccount::where('id', $sender->id)->value('balance');
             $receiver_after = PayAccount::where('id', $receiver->id)->value('balance');
@@ -59,7 +59,7 @@ class TransferTest extends TestCase
 
         $transfer = new Transfer();
         $this->expectException(NegativeOrZeroAmountException::class);
-        $transfer->run($sender->id, $receiver->id, -500, 'TEST');
+        $transfer->run($sender, $receiver, -500, 'TEST');
     }
 
     /**
@@ -71,10 +71,11 @@ class TransferTest extends TestCase
         $seeder = new DatabaseSeeder();
         $seeder->call(UserSeeder::class);
         $seeder->call(CompanySeeder::class);
+        $sender = PayAccount::inRandomOrder()->limit(1)->first();
 
         $transfer = new Transfer();
         $this->expectException(TransferSameIdException::class);
-        $transfer->run(1, 1, 100, 'TEST');
+        $transfer->run($sender, $sender, 100, 'TEST');
     }
 
     /**
@@ -92,6 +93,6 @@ class TransferTest extends TestCase
 
         $transfer = new Transfer();
         $this->expectException(NotEnoughMoneyException::class);
-        $transfer->run($sender->id, $receiver->id, 5000, 'TEST');
+        $transfer->run($sender, $receiver, 5000, 'TEST');
     }
 }

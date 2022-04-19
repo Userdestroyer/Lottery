@@ -10,20 +10,17 @@ use http\Exception;
 
 class Transfer {
 
-    public function run(int $sender_id,int $receiver_id,int $amount,string $message) {
+    public function run(PayAccount $sender,PayAccount $receiver,int $amount,string $message) {
         // VALIDATION
-        if ($sender_id == $receiver_id) {
+        if ($sender->id == $receiver->id) {
             throw new TransferSameIdException('Same Id for sender and receiver');
         } else if ($amount <= 0) {
             throw new NegativeOrZeroAmountException('Transfer amount cannot be zero or negative');
         }
-        //FETCHING
-        $sender = PayAccount::findOrFail($sender_id);
-        $receiver = PayAccount::findOrFail($receiver_id);
 
-        \DB::transaction(function () use ($sender_id, $receiver_id, $amount, $message){
-            $sender = PayAccount::findOrFail($sender_id);
-            $receiver = PayAccount::findOrFail($receiver_id);
+        \DB::transaction(function () use ($sender, $receiver, $amount, $message){
+            /*$sender = PayAccount::findOrFail($sender_id);
+            $receiver = PayAccount::findOrFail($receiver_id);*/
             if ($sender->balance < $amount) {
                 throw new NotEnoughMoneyException('Not enough money on sender balance');
             }
@@ -32,13 +29,13 @@ class Transfer {
                 'message' => $message
             ]);
             $transaction->operation()->create([
-                'pay_account_id' => $sender_id,
+                'pay_account_id' => $sender->id,
                 'balance_before' => $sender->balance,
                 'amount' => $amount,
                 'balance_after' => $sender->balance - $amount,
             ]);
             $transaction->operation()->create([
-                'pay_account_id' => $receiver_id,
+                'pay_account_id' => $receiver->id,
                 'balance_before' => $receiver->balance,
                 'amount' => $amount,
                 'balance_after' => $receiver->balance + $amount,

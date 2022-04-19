@@ -10,6 +10,7 @@ use Database\Seeders\DrawTypeSeeder;
 use Database\Seeders\DrawSeeder;
 use Database\Seeders\TicketSeeder;
 use Database\Seeders\UserSeeder;
+use Dflydev\DotAccessData\Data;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Draw;
@@ -17,7 +18,7 @@ use App\Models\Draw;
 class DrawPlayTest extends TestCase
 {
 
-    use RefreshDatabase;
+    //use RefreshDatabase;
     /**
      * test
      */
@@ -25,10 +26,7 @@ class DrawPlayTest extends TestCase
     {
         $this->expectNotToPerformAssertions();
         $seeder = new DatabaseSeeder();
-        $seeder->call(UserSeeder::class);
-        $seeder->call(DrawTypeSeeder::class);
-        $seeder->call(DrawSeeder::class);
-        $seeder->call(TicketSeeder::class);
+        $seeder->call(DatabaseSeeder::class);
         $drawPlay = new DrawPlay();
 
         $draw_type = DrawType::where('type', '6x45')->first();
@@ -47,10 +45,7 @@ class DrawPlayTest extends TestCase
     {
         $this->expectNotToPerformAssertions();
         $seeder = new DatabaseSeeder();
-        $seeder->call(UserSeeder::class);
-        $seeder->call(DrawTypeSeeder::class);
-        $seeder->call(DrawSeeder::class);
-        $seeder->call(TicketSeeder::class);
+        $seeder->call(DatabaseSeeder::class);
         $drawPlay = new DrawPlay();
 
 
