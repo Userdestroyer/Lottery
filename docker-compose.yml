@@ -15,48 +15,83 @@ services:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
-      - mysql
-      - mysql_testing
+      # - mysql
+      # - mysql_testing
+      - postgres
     networks:
       - laravel
 
-  mysql:
-    image: mysql:5.7.22
-    container_name: mysql
+  # mysql:
+  #   image: mysql:5.7.22
+  #   container_name: mysql
+  #   restart: unless-stopped
+  #   tty: true
+  #   ports:
+  #     - "4306:3306"
+  #   volumes:
+  #     - ./docker/mysql:/var/lib/mysql
+  #   environment:
+  #     MYSQL_DATABASE: lottery
+  #     MYSQL_USER: lottery
+  #     MYSQL_PASSWORD: secret
+  #     MYSQL_ROOT_PASSWORD: secret
+  #     SERVICE_TAGS: dev
+  #     SERVICE_NAME: mysql
+  #   networks:
+  #     - laravel
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
     restart: unless-stopped
     tty: true
     ports:
-      - "4306:3306"
+      - "5432:5432"
     volumes:
-      - ./docker/mysql:/var/lib/mysql
+      - ./docker/postgres:/var/lib/postgresql/data
     environment:
-      MYSQL_DATABASE: lottery
-      MYSQL_USER: lottery
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      POSTGRES_DB: "lottery"
+      POSTGRES_USER: "lottery"
+      POSTGRES_PASSWORD: "secret"
     networks:
       - laravel
 
-  mysql_testing:
-      image: mysql:5.7.22
-      container_name: mysql_testing
-      restart: unless-stopped
-      tty: true
-      ports:
-          - "4307:3306"
-      volumes:
-          - ./docker/mysql_testing:/var/lib/mysql_testing
-      environment:
-          MYSQL_DATABASE: lottery
-          MYSQL_USER: lottery
-          MYSQL_PASSWORD: secret
-          MYSQL_ROOT_PASSWORD: secret
-          SERVICE_TAGS: dev
-          SERVICE_NAME: mysql_testing
-      networks:
-          - laravel
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: always
+    container_name: pgadmin4
+    user:
+     root
+    depends_on:
+      - postgres
+    ports:
+      - "5050:80"
+    volumes:
+      - ./docker/pgadmin:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgres@test.com
+      PGADMIN_DEFAULT_PASSWORD: secret
+    networks:
+      - laravel
+
+  # mysql_testing:
+  #     image: mysql:5.7.22
+  #     container_name: mysql_testing
+  #     restart: unless-stopped
+  #     tty: true
+  #     ports:
+  #         - "4307:3306"
+  #     volumes:
+  #         - ./docker/mysql_testing:/var/lib/mysql_testing
+  #     environment:
+  #         MYSQL_DATABASE: lottery
+  #         MYSQL_USER: lottery
+  #         MYSQL_PASSWORD: secret
+  #         MYSQL_ROOT_PASSWORD: secret
+  #         SERVICE_TAGS: dev
+  #         SERVICE_NAME: mysql_testing
+  #     networks:
+  #         - laravel
 
   php:
     build:
@@ -70,33 +105,33 @@ services:
     networks:
       - laravel
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    container_name: phpmyadmin
-    depends_on:
-      - mysql
-    ports:
-      - "8081:80"
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: secret
-    networks:
-      - laravel
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   restart: always
+  #   container_name: phpmyadmin
+  #   depends_on:
+  #     - mysql
+  #   ports:
+  #     - "8081:81"
+  #   environment:
+  #     PMA_HOST: mysql
+  #     MYSQL_ROOT_PASSWORD: secret
+  #   networks:
+  #     - laravel
 
-  phpmyadmin_testing:
-      image: phpmyadmin/phpmyadmin
-      restart: always
-      container_name: phpmyadmin_testing
-      depends_on:
-          - mysql_testing
-      ports:
-          - "8082:80"
-      environment:
-          PMA_HOST: mysql_testing
-          MYSQL_ROOT_PASSWORD: secret
-      networks:
-          - laravel
+  # phpmyadmin_testing:
+  #     image: phpmyadmin/phpmyadmin
+  #     restart: always
+  #     container_name: phpmyadmin_testing
+  #     depends_on:
+  #         - mysql_testing
+  #     ports:
+  #         - "8082:82"
+  #     environment:
+  #         PMA_HOST: mysql_testing
+  #         MYSQL_ROOT_PASSWORD: secret
+  #     networks:
+  #         - laravel
 
   composer:
     image: composer:latest
@@ -115,8 +150,9 @@ services:
     volumes:
       - ./:/var/www/html
     depends_on:
-      - mysql
-      - mysql_testing
+      # - mysql
+      # - mysql_testing
+      - postgres
     working_dir: /var/www/html
     entrypoint: ['php', '/var/www/html/artisan']
     networks:
