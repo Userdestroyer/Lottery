@@ -1,5 +1,6 @@
 <template>
     <div class="sidebar"></div>
+    
 </template>
 
 <script>
@@ -23,6 +24,6 @@ export default {};
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 50px;
+    padding: 100px;
 }
 </style>
