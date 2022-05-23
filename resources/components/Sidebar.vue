@@ -1,5 +1,11 @@
 <template>
-    <div class="sidebar"></div>
+    <div class="sidebar">
+        <div class="menuItems">
+            <div><router-link to="/register">Register</router-link></div>
+            <div><router-link to="/login">Login</router-link></div>
+            <div><router-link to="/profile">Profile</router-link></div>
+        </div>
+    </div>
     
 </template>
 

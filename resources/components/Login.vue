@@ -1,4 +1,5 @@
 <template>
+    <Sidebar />
     <div>
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -34,7 +35,14 @@
 </template>
 
 <script>
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+
 export default {
+    components: { 
+        Sidebar,
+        Header
+        },
     data() {
         return {
             formData: {

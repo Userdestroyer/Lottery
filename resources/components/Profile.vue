@@ -1,21 +1,29 @@
 <template>
-<div class="d-flex flex-column">
-    <div class="d-flex justify-content-evenly">
-        MY PROFILE PAGE
-        <button @click="logout" class="btn btn-primary float-right">Logout</button>
-    </div>
-    <div >
-        <p class="text-center">Name: {{data.name}}</p>
-        <p class="text-center">Email: {{data.email}}</p>
-        <p class="text-center">Phone: {{data.phone_number}}</p>
-        <p class="text-center">Role: {{data.role}}</p>
-    </div>
+    <Sidebar />
+    <div class="d-flex flex-column">
+        <div class="d-flex justify-content-evenly">
+            MY PROFILE PAGE
+            <button @click="logout" class="btn btn-primary float-right">Logout</button>
+        </div>
+        <div >
+            <p class="text-center">Name: {{data.name}}</p>
+            <p class="text-center">Email: {{data.email}}</p>
+            <p class="text-center">Phone: {{data.phone_number}}</p>
+            <p class="text-center">Role: {{data.role}}</p>
+        </div>
 
-</div>
+    </div>
 </template>
 
 <script>
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+
 export default {
+    components: { 
+        Sidebar,
+        Header
+        },
     data(){
         return {
             data: [],
