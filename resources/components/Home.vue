@@ -2,7 +2,7 @@
     <Sidebar />
 
     <div class="mainWindow">
-        <Header />
+        <!-- <Header /> -->
         <DrawTypes />
     </div>
 </template>
