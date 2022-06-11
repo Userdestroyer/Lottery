@@ -15,5 +15,10 @@ else
         sudo docker-compose run --rm $1 $2 $3 $4
     fi
 fi
-sudo chmod 777 -R ./
+#sudo chmod 777 -R ./
+
+#sudo find . -type f -exec chmod 644 {} \;
+#sudo find . -type d -exec chmod 755 {} \;
+#sudo chmod -R 777 ./storage
+#sudo chmod -R 777 ./bootstrap/cache/
 
