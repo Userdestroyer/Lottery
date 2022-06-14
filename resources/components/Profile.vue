@@ -6,10 +6,17 @@
             <button @click="logout" class="btn btn-primary float-right">Logout</button>
         </div>
         <div >
-            <p class="text-center">Name: {{data.name}}</p>
-            <p class="text-center">Email: {{data.email}}</p>
-            <p class="text-center">Phone: {{data.phone_number}}</p>
-            <p class="text-center">Role: {{data.role}}</p>
+            <h3 class="text-center">Personal Info</h3>
+            <p class="text-center">Name: {{data.personal.name}}</p>
+            <p class="text-center">Email: {{data.personal.email}}</p>
+            <p class="text-center">Role: {{data.personal.role}}</p>
+            <p class="text-center">Phone: {{data.personal.phone_number}}</p>
+            <h3 class="text-center">PayAccounts</h3>
+            <div v-for="account in data.payaccounts">
+                <p class="text-center">Description: {{account.description}}</p>
+                <p class="text-center">Balance: {{account.balance}}</p>
+            </div>
+            
         </div>
 
     </div>
@@ -26,14 +33,22 @@ export default {
         },
     data(){
         return {
-            data: [],
+            data: {
+                personal: [],
+                payaccounts: []
+            },
             token: localStorage.getItem('token')
         }
     },
     methods: {
         getInfo(){
             axios.get('/api/profile').then((response) => {
-                this.data = response.data
+                this.data.personal = response.data
+            }).catch((errors) => {
+                console.log(errors)
+            });
+            axios.get('/api/profile/payaccountinfo').then((response) => {
+                this.data.payaccounts = response.data
             }).catch((errors) => {
                 console.log(errors)
             });

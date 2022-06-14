@@ -10,9 +10,9 @@ else
     elif [ $1 = "status" ]; then
         sudo docker container ls
     elif [ $1 = "test" ]; then
-        sudo docker exec php vendor/bin/phpunit $2 $3 $4
+        docker exec php vendor/bin/phpunit $2 $3 $4
     else
-        sudo docker-compose run --rm $1 $2 $3 $4
+        docker-compose run --rm $1 $2 $3 $4
     fi
 fi
 #sudo chmod 777 -R ./
@@ -21,4 +21,4 @@ fi
 #sudo find . -type d -exec chmod 755 {} \;
 #sudo chmod -R 777 ./storage
 #sudo chmod -R 777 ./bootstrap/cache/
-
+#sudo chmod 777 ./lottery.sh {} \;

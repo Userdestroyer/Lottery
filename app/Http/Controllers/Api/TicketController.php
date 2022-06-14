@@ -60,9 +60,17 @@ class TicketController extends Controller
                     "Message" => "Ticket has been created"
                 ]);
             });
+    }
 
-            //response
-
-
+    public function mytickets (){
+        $tickets = Ticket::select('type_id','draw_id','number','values','price','is_winner',
+        'matches','number_of_matches','winning_sum')
+        ->where('user_id',  auth()->user()->id)->get();
+        if ($tickets->isEmpty()){
+            return response()->json([
+                "message" => "No tickets"
+            ], 200);
+        }
+        return response($tickets, 200);
     }
 }

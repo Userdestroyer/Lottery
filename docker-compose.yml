@@ -98,6 +98,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: php
+    user: "1000:1000"
     volumes:
       - ./:/var/www/html
     ports:
@@ -136,6 +137,7 @@ services:
   composer:
     image: composer:latest
     container_name: composer
+    user: "1000:1000"
     volumes:
       - ./:/var/www/html
     working_dir: /var/www/html
@@ -147,6 +149,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: artisan
+    user: "1000:1000"
     volumes:
       - ./:/var/www/html
     depends_on:

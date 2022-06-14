@@ -4,6 +4,8 @@
             <div><router-link to="/register">Register</router-link></div>
             <div><router-link to="/login">Login</router-link></div>
             <div><router-link to="/profile">Profile</router-link></div>
+            <div><router-link to="/profile/mytickets">My Tickets</router-link></div>
+            <router-link to="/purchase">Purchase tickets</router-link>
         </div>
     </div>
     
@@ -22,14 +24,17 @@ export default {};
 </style>
 <style scoped>
 .sidebar{
+    min-width: 200px;
+    max-width: 200px;
+    font-size: large;
     color: white;
-    background-color: #1a1e21;
+    background-color: yellow;
     float: left;
     position: fixed;
     z-index: 0;
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 100px;
+    padding: 30px;
 }
 </style>

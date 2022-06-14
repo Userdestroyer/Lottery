@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\TicketController;
 use App\Http\Controllers\Api\DrawController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\PayAccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +27,21 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
 
-    Route::get('/profile', [UserController::class, 'profile']);
+    Route::group(['prefix' => 'profile'], function() {
+        Route::get('/', [UserController::class, 'profile']);
+
+        Route::get('/payaccountinfo', [PayAccountController::class, 'payAccountInfo']);
+
+        Route::get('/payhistory', [UserController::class, 'payHistory']);
+
+        Route::get('/mytickets', [TicketController::class, 'mytickets']);
+    });
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::prefix('/ticket')->group(function () {
         Route::post('/create', [TicketController::class, 'createTicket']);
+
     });
 });
 

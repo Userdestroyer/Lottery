@@ -11,4 +11,8 @@ class UserController extends Controller
     public function profile (){
         return response(User::find(auth()->user()->id), 200);
     }
+
+    public function paymentHistory (){
+
+    }
 }
