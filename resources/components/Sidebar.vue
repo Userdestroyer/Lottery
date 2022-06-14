@@ -41,7 +41,7 @@ export default {
     max-width: 200px;
     font-size: large;
     color: #c9c9c9;
-    background-color: red;
+    background-color: #292929;
     float: left;
     position: fixed;
     z-index: 0;
