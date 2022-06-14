@@ -2,25 +2,22 @@
     PURCHASE PAGE
     <Sidebar />
     <div class="sidebar-layout">
-    <h3>TYPE</h3>
-        <input type="text" size="40" class="form-control" name="type" v-model="formData.type_id">
-        <input list="type">
-        <datalist id="type">
-            <option value="BMW" />
-            <option value="Bentley" />
-            <option value="Mercedes" />
-            <option value="Audi" />
-            <option value="Volkswagen" />
-        </datalist>
-            <p class="text-danger" v-if="hasErrors" v-text="errors.errors.type_id"></p>
-    <h3>NUMBERS</h3>
-        <input type="text" size="40" class="form-control" name="values" v-model="formData.values">
-            <p class="text-danger" v-if="hasErrors" v-text="errors.errors.values"></p>
-    <h3>SUM</h3>
-        <input type="text" size="40" class="form-control" name="price" v-model="formData.price">
-            <p class="text-danger" v-if="hasErrors" v-text="errors.errors.price"></p>
-            <p class="text-danger" v-if="!hasErrors" v-text="errors.message"></p>
-    <button class="btn btn-primary" @click="purchase">Buy Ticket</button>
+        <div style="padding-left:clamp(50px, 5%, 100px); width: 500px;">
+            <h3>TYPE</h3>
+                <input list="type" size="40" class="form-control" name="type" v-model="formData.type_id">
+                <datalist id="type" size="40">
+                    <option v-for="option in data" v-bind:value="option.id">{{option.name}}</option>>
+                </datalist>
+                    <p class="text-danger" v-if="hasErrors" v-text="errors.errors.type_id"></p>
+            <h3>NUMBERS</h3>
+                <input type="text" size="40" class="form-control" name="values" v-model="formData.values">
+                    <p class="text-danger" v-if="hasErrors" v-text="errors.errors.values"></p>
+            <h3>SUM</h3>
+                <input type="text" size="40" class="form-control" name="price" v-model="formData.price">
+                    <p class="text-danger" v-if="hasErrors" v-text="errors.errors.price"></p>
+                    <p class="text-danger" v-if="!hasErrors" v-text="errors.message"></p>
+            <button class="btn btn-primary" @click="purchase">Buy Ticket</button>
+        </div>
     </div>
 </template>
 

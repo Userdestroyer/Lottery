@@ -2,20 +2,22 @@
 MYTICKETS
 <Sidebar />
 <div class="sidebar-layout">
-<table border="1">
-    <tr>
-        <th>Type</th>
-        <th>Draw</th>
-        <th>Ticket Number</th>
-        <th>Values</th>
-        <th>Price</th>
-        <th>Winner</th>
-        <th>Matches</th>
-        <th>Number of matches</th>
-        <th>Winning amount</th>
-    </tr>
-    <tr v-for="row in data.content"><td v-for="value in row">{{value}}</td></tr>
-</table>
+    <div style="padding-left:50px">
+        <table border="1">
+            <tr>
+                <th>Type</th>
+                <th>Draw</th>
+                <th>Ticket Number</th>
+                <th>Values</th>
+                <th>Price</th>
+                <th>Winner</th>
+                <th>Matches</th>
+                <th>Number of matches</th>
+                <th>Winning amount</th>
+            </tr>
+            <tr v-for="row in data.content"><td v-for="value in row">{{value}}</td></tr>
+        </table>
+    </div>
 </div>
 </template>
 

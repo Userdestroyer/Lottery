@@ -11286,8 +11286,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.sidebar-layout{
+.sidebar-layout {
   margin-left: 200px;
-  min-width: 1000px;
-  padding-left: 50px;
+  min-width: 600px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lottery-header {
+  align-content: center;
+  font-size: 10ch;
+  height: 150px;
+  width: 100%;
 }

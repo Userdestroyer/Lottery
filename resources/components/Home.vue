@@ -1,7 +1,7 @@
 <template>
     <Sidebar />
-
     <div class="sidebar-layout">
+        <div class="lottery-header">HOMEPAGE</div>
         <DrawTypes />
     </div>
 </template>

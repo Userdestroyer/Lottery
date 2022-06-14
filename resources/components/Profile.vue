@@ -1,25 +1,25 @@
 <template>
     <Sidebar />
-    <div class="d-flex flex-column">
-        <div class="d-flex justify-content-evenly">
-            MY PROFILE PAGE
-            <button @click="logout" class="btn btn-primary float-right">Logout</button>
-        </div>
-        <div >
-            <h3 class="text-center">Personal Info</h3>
-            <p class="text-center">Name: {{data.personal.name}}</p>
-            <p class="text-center">Email: {{data.personal.email}}</p>
-            <p class="text-center">Role: {{data.personal.role}}</p>
-            <p class="text-center">Phone: {{data.personal.phone_number}}</p>
-            <h3 class="text-center">PayAccounts</h3>
-            <div v-for="account in data.payaccounts">
-                <p class="text-center">Description: {{account.description}}</p>
-                <p class="text-center">Balance: {{account.balance}}</p>
+    <div class="sidebar-layout">
+        <div class="d-flex flex-column">
+            <div class="d-flex justify-content-evenly">
+                MY PROFILE PAGE
             </div>
-            
-        </div>
-
+            <div >
+                <h3 class="text-center">Personal Info</h3>
+                <p class="text-center">Name: {{data.personal.name}}</p>
+                <p class="text-center">Email: {{data.personal.email}}</p>
+                <p class="text-center">Role: {{data.personal.role}}</p>
+                <p class="text-center">Phone: {{data.personal.phone_number}}</p>
+                <h3 class="text-center">PayAccounts</h3>
+                <div v-for="account in data.payaccounts">
+                    <p class="text-center">Description: {{account.description}}</p>
+                    <p class="text-center">Balance: {{account.balance}}</p>
+                </div>
+            </div>
+        </div> 
     </div>
+    
 </template>
 
 <script>
@@ -52,16 +52,7 @@ export default {
             }).catch((errors) => {
                 console.log(errors)
             });
-        },
-        logout(){
-            this.$router.push('/login')
-            axios.post('/api/logout').then((response) => {
-                localStorage.removeItem('token')
-            }).catch((errors) => {
-                console.log(errors)
-            });
         }
-
     },
     mounted() {
         window.axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`

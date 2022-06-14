@@ -1,8 +1,8 @@
 <template>
     <Sidebar />
-    <div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
+    <div class="sidebar-layout">
+        <div class="" style="margin-left: 150px">
+            <div class="" style="width: 500px">
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
