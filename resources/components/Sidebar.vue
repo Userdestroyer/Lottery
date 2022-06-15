@@ -3,12 +3,12 @@
         <div class="menuItems">
             <div style="max-width: 200px;"><img src="../../public/images/Logo3.png" style="max-width:100%;max-height:100%;" alt=""></div>
             <div><router-link to="/">Home</router-link></div>
-            <div><router-link to="/register">Register</router-link></div>
-            <div><router-link to="/login">Login</router-link></div>
-            <div><router-link to="/profile">Profile</router-link></div>
-            <div><router-link to="/profile/mytickets">My Tickets</router-link></div>
+            <div v-if="!tokenSet"><router-link to="/register">Register</router-link></div>
+            <div v-if="!tokenSet"><router-link to="/login">Login</router-link></div>
+            <div v-if="tokenSet"><router-link to="/profile">Profile</router-link></div>
+            <div v-if="tokenSet"><router-link to="/profile/mytickets">My Tickets</router-link></div>
             <div><router-link to="/purchase">Purchase tickets</router-link></div>
-            <button @click="logout" class="btn btn-primary float-right">Logout</button>
+            <button v-if="tokenSet" @click="logout" class="btn btn-primary float-right">Logout</button>
         </div>
     </div>
     
@@ -16,15 +16,30 @@
 
 <script>
 export default {
+    data() {
+        return {
+           tokenSet: false,
+        }
+    },
     methods:{
         logout(){
-            this.$router.push('/login')
             axios.post('/api/logout').then((response) => {
                 localStorage.removeItem('token')
+                this.$router.push('/login')
             }).catch((errors) => {
                 console.log(errors)
             });
+        },
+        checkToken(){
+            if(localStorage.getItem('token') != null){
+                this.tokenSet = true
+                console.log(this.tokenSet)
+            }
         }
+        
+    },
+    mounted(){
+        this.checkToken()
     }
 };
 </script>
