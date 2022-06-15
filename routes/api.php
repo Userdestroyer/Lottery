@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    Route::get('/checktoken', [AuthController::class, 'checkAuthToken']);
+
     Route::prefix('/ticket')->group(function () {
         Route::post('/create', [TicketController::class, 'createTicket']);
 

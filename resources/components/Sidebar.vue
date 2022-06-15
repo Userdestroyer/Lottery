@@ -1,6 +1,7 @@
 <template>
     <div class="sidebar">
         <div class="menuItems">
+            <div style="max-width: 200px;"><img src="../../public/images/Logo3.png" style="max-width:100%;max-height:100%;" alt=""></div>
             <div><router-link to="/">Home</router-link></div>
             <div><router-link to="/register">Register</router-link></div>
             <div><router-link to="/login">Login</router-link></div>
@@ -41,7 +42,7 @@ export default {
     max-width: 200px;
     font-size: large;
     color: #c9c9c9;
-    background-color: #292929;
+    background-color: #13214f;
     float: left;
     position: fixed;
     z-index: 0;

@@ -70,4 +70,8 @@ class AuthController extends Controller
 
         return response($response, 201);
     }
+
+    public function checkAuthToken () {
+        return response(User::select('role')->where('id', auth()->user()->id)->get(), 200);
+    }
 }

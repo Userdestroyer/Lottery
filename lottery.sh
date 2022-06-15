@@ -11,6 +11,8 @@ else
         sudo docker container ls
     elif [ $1 = "test" ]; then
         docker exec php vendor/bin/phpunit $2 $3 $4
+    elif [ $1 = "composer" ]; then
+        sudo docker-compose run --rm $1 $2 $3 $4
     else
         docker-compose run --rm $1 $2 $3 $4
     fi

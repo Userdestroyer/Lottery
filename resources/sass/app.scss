@@ -7,6 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body{
+    background-color: #d6d6d6 !important;
+}
+
 .sidebar-layout{
     margin-left: 200px;
     min-width: 600px;
