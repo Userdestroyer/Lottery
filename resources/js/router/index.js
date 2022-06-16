@@ -8,7 +8,6 @@ import Purchase from "../../components/Purchase";
 import Mytickets from "../../components/Mytickets";
 
 const guard = function(to, from, next) {
-
     // check for valid auth token
     window.axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`
     axios.get('/api/checktoken').then(response => {
